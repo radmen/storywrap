@@ -1,8 +1,10 @@
-import { createStore } from 'redux';
-import { User } from '../app/users/user';
-import { Story } from '../app/stories/story';
+import { createStore, applyMiddleware } from 'redux';
+import { User } from '../modules/users/user';
+import { Story } from '../modules/stories/story';
 import { createReducer } from './appStore/createReducer';
 import { IStore } from '~redux/redux';
+
+const createLogger = require('redux-logger');
 
 export interface State {
   user?: User;
@@ -10,4 +12,7 @@ export interface State {
   story?: Story;
 }
 
-export const appStore: IStore<State> = createStore(createReducer());
+export const appStore: IStore<State> = createStore(
+  createReducer(),
+  applyMiddleware(createLogger())
+);

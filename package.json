@@ -33,8 +33,10 @@
     "bootstrap": "^4.0.0-alpha.2",
     "es6-shim": "^0.35.0",
     "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.6",
+    "uuid": "^2.0.2",
     "zone.js": "0.6.12"
   },
   "devDependencies": {
