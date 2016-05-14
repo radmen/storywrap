@@ -1,22 +1,13 @@
-import {createStore} from 'redux';
-import {User} from '../app/users/user';
-import {Story} from '../app/stories/story';
-import {createReducer} from './appStore/createReducer';
+import { createStore } from 'redux';
+import { User } from '../app/users/user';
+import { Story } from '../app/stories/story';
+import { createReducer } from './appStore/createReducer';
+import { IStore } from '~redux/redux';
 
-interface State {
-  session: {
-    user?: User;
+export interface State {
+  user?: User;
 
-    story?: Story;
-  };
+  story?: Story;
 }
-;
 
-const initialState = <State>{
-  session: {
-    user: null,
-    story: null,
-  }
-};
-
-export const appStore = createStore(createReducer(), initialState);
+export const appStore: IStore<State> = createStore(createReducer());
