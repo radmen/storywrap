@@ -1,0 +1,9 @@
+<div class="col-md-4 col-md-offset-4">
+  <form (submit)="createStory(title.value)">
+    <fieldset class="form-group">
+      <label for="name">{{ user?.name }} create your story</label>
+      <input #title type="text" class="form-control" name="title" placeholder="Title" required autofocus>
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

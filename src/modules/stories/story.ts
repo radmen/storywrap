@@ -2,9 +2,13 @@ import { User } from '../users/user';
 import { StoryChunk } from './story-chunk';
 
 export interface Story {
-  title: string,
+  id: string;
+  
+  title?: string;
+  
+  owner?: User;
 
-  chunks: StoryChunk[],
+  chunks: StoryChunk[];
 
-  users: User[],
+  users: User[];
 }

@@ -3,9 +3,10 @@ import { Router } from '@angular/router-deprecated';
 import { IStore } from '~redux/redux';
 import { State } from '../../../bootstrap/appStore';
 import { User } from '../../users/user';
+import { createStory } from '../action/createStory';
 
 @Component({
-  template: '<h1>Hai {{ user && user.name }}</h1>',
+  template: require('./new-story.component.html'),
 })
 export class NewStoryComponent implements OnInit {
   private user: User;
@@ -24,5 +25,12 @@ export class NewStoryComponent implements OnInit {
     }
 
     this.user = user;
+  }
+
+  createStory(title) {
+    const action = createStory(title, this.user);
+    this.appStore.dispatch(action);
+
+    this.router.navigate(['StoryWrap', {id: action.id}]);
   }
 }
