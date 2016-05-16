@@ -1,8 +1,8 @@
 <div class="col-md-4 col-md-offset-4">
-  <form (submit)="saveName($event.target)">
+  <form (submit)="saveName(name.value)">
     <fieldset class="form-group">
       <label for="name">Hello! Tell us your name :)</label>
-      <input type="text" class="form-control" id="name" name="name" placeholder="Your name" required autofocus>
+      <input #name type="text" class="form-control" name="name" placeholder="Your name" required autofocus>
     </fieldset>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

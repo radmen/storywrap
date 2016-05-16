@@ -13,9 +13,7 @@ export class HelloComponent {
               private router: Router) {
   }
 
-  saveName(form) {
-    const name = form.querySelector('[name="name"]').value;
-
+  saveName(name) {
     this.appStore.dispatch(setName(name));
     this.router.navigate(['Home']);
 
