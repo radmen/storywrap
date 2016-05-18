@@ -1,0 +1,13 @@
+<h1>Add your part!</h1>
+<form (submit)="addChunk()">
+  <div class="form-group">
+    <label for="name">Text</label>
+    <textarea class="form-control"
+              required
+              [(ngModel)]="formData.text"
+              ngControl="text"
+              #text="ngForm"
+    ></textarea>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>

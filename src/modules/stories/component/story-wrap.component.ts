@@ -4,11 +4,13 @@ import { IStore } from '~redux/redux';
 import { State } from '../../../bootstrap/appStore';
 import { Story } from '../story';
 import { StoryChunkComponent } from './story-wrap/story-chunk.component';
+import { AddStoryChunkComponent } from './story-wrap/add-story-chunk.component';
 
 @Component({
   template: require('./story-wrap.component.html'),
   directives: [
     StoryChunkComponent,
+    AddStoryChunkComponent,
     NgFor,
   ]
 })
