@@ -3,6 +3,7 @@ import { User } from '../modules/users/user';
 import { Story } from '../modules/stories/story';
 import { createReducer } from './appStore/createReducer';
 import { IStore } from '~redux/redux';
+import { StoryChunk } from '../modules/stories/story-chunk';
 
 const createLogger = require('redux-logger');
 
@@ -21,7 +22,16 @@ const initialState = <State>{
   story: <Story> {
     id: '56110968-1b7e-11e6-a2c7-f70370a2a08b',
     title: 'Test story',
-    chunks: [],
+    chunks: [
+      <StoryChunk>{
+        user: {
+          id: '3c152058-1b7e-11e6-bb5d-f70370a2a08b',
+          name: 'Jon',
+        },
+        text: 'Lorem ipsum dolor sit amet',
+        createdAt: new Date(),
+      },
+    ],
     users: [],
   }
 };
